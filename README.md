@@ -15,7 +15,7 @@ Instalar:
 
 Ejecuta el siguiente comando en la terminal:
 ```bash
-git clone https://github.com/cachi001/instrumentos-tp.git
+https://github.com/cachi001/tsSemana4.git
 ```
 
 ---
