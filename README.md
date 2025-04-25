@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
+🌟 TP INSTRUMENTOS (RUTAS ANIDADAS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📌 Requisitos previos
 
-Currently, two official plugins are available:
+Instalar:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Git
+- Node.js y npm
+- MySQL Server & MySQL Workbench
+- IntelliJ IDEA o cualquier IDE compatible con Spring Boot
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🔹 **Clonar el repositorio**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Ejecuta el siguiente comando en la terminal:
+```bash
+git clone https://github.com/cachi001/instrumentos-tp.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🔹 **Configurar el Frontend**
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1. Abre la carpeta del **frontend** en Visual Studio Code
+2. Instala las dependencias ejecutando:
+```bash
+npm install
 ```
+3. Inicia la aplicación con:
+```bash
+npm run dev
+```
+4. Accede a la página en `http://localhost:5173`.
+
+Si el puerto es diferente, cambiarlo en `config/webConfig` del backend.
+
+---
+
+🔹 **Configurar y ejecutar el Backend**
+
+1. Abre la carpeta del **backend** en IntelliJ IDEA.
+2. Asegúrate de tener **MySQL Workbench** y **MySQL Server** instalados y en ejecución.
+3. Configura la conexión a la base de datos en el archivo `application.properties`:
+
+```properties
+spring.application.name=instrumentos-tp
+
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/instrumentos_db  # Nombre de la BD
+spring.datasource.username=root  # Usuario
+spring.datasource.password=1122  # Contraseña
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.show-sql=true
+```
+
+4. Ejecuten la aplicación desde IntelliJ IDEA.
